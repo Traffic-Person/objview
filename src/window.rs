@@ -73,4 +73,10 @@ impl Framebuffer {
     pub fn set_pixel(&mut self, x: usize, y: usize, value: u32) {
         self.data[x + y * self.width] = value;
     }
+
+    pub fn clear(&mut self, color: u32) {
+        for i in 0..self.data.len() {
+            self.data[i] = color;
+        }
+    }
 }
